@@ -1,0 +1,161 @@
+example 1:
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+ for(int i=1,space=0;i<=4;i++,space++)
+     {
+     cout<<endl<<setw(space)<<setfill(' ')<<""<<setw(i)<<setfill('X')<<"";    
+ }
+ for(int i=3,space=2;i>=1;i--,space--)
+     {
+    cout<<endl<<setw(space)<<setfill(' ')<<""<<setw(i)<<setfill('X')<<"";    
+ }
+ return 0;
+}
+
+example 2:
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	int M[]={45,55,80,12,30};
+	
+	
+	
+	for(int i=0;i<5;i++)
+	{
+	
+	cout<<endl<<setw(M[i])<<setfill('X');
+	cout<<M[i];
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	return 0;
+}
+
+example 3:
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	int i;
+	i=1;
+	cout<<endl<<"x";
+	for(i=2;i<7;i++)
+	{
+		cout<<endl<<"x"<<setw(i)<<"x";
+		
+	}
+	cout<<endl<<"x"<<"x"<<"x"<<"x"<<"x"<<"x"<<"x";
+	
+	
+	
+	
+	
+	
+	return 0;
+}
+
+example 4:
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+	string name,place;
+	ofstream myFile("info.txt");
+	cout<<"who are you";
+	cin>>name;
+	cout<<"where are you from";
+	cin>>place;
+	myFile<<"name:"<<name<<"place:"<<place;
+	myFile.close();
+	return 0;
+	
+	
+	
+}
+
+example 5:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a=10;
+    int *p;
+    cout<<"\ninitial:"<<p;
+    cout<<"\naddress of a:"<<&a;
+    p=&a;
+    cout<<"\nafter assignment:"<<p;
+    cout<<"\n accessing from address "<<p<<" we get "<<*p;
+    a=a+10;
+    cout<<"\nafter a changed a:"<<a<<"  p is ref:"<<p<<" value is "<<*p;
+    *p=*p+100;
+        cout<<"\nafter a changed a:"<<a<<"  p is ref:"<<p<<" value is "<<*p;
+}
+
+example 6:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int *p;
+    p=new int(5);
+    cout<<"\nP referse to:  "<<p;
+    for(int i=0;i<5;i++)
+    {
+        cout<<"\nAddress is:"<<(p+i)<<endl;
+        cin>>*(p+i);
+    }
+    cout<<"data is\n";
+    for(int i=0;i<5;i++)
+    {
+        cout<<"\nAddress is:"<<(p+i)<<"-------"<<*(p+i);
+       
+    }
+}
+
+example 7:
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+
+string myText;
+ifstream MyReadFile("info.txt");
+while(getline(MyReadFile,myText))
+{
+cout<<myText;	
+	
+}
+
+int count,small;
+count=0;
+small=0;
+char ch;
+if((ch>='A' && ch<='Z') || (ch>='a' && ch<='z'))  
+
+{
+	count++;
+	cout<<endl<<"\ncountis:"<<count;
+}
+
+else
+{
+
+cout<<"bye";
+}
+MyReadFile.close();
+return 0;
+}
